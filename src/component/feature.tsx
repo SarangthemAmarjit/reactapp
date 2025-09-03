@@ -43,11 +43,11 @@ const FeatureSection: React.FC = () => {
   return (
     <section id="features" className="feature-section">
       <div className="container">
-        <div className="row">
+        <div className="row align-items-center">
           <div className="col-lg-5 col-md-10">
             <div className="section-title mb-60">
               <h2 className="mb-20">Modern design with Essential Features</h2>
-              <p>
+              <p style={{ color: "#6c757d" }}>
                 Lorem ipsum dolor amet, consetetur sadipscing elitr, sed diam
                 nonumy eirmod te invidunt, Lorem ipsum dolor sit amet.
               </p>
@@ -59,11 +59,16 @@ const FeatureSection: React.FC = () => {
               {features.map((feature) => (
                 <div key={feature.id} className="col-lg-6 col-md-6">
                   <div className="single-feature">
-                    <div className="feature-icon">
-                      <i className={feature.icon}></i>
+                    {/* Icon + Title Row */}
+                    {/* Icon + Title Row */}
+                    <div className="d-flex justify-content-center align-items-center gap-4 me-4">
+                      <div className="feature-icon">
+                        <i className={feature.icon}></i>
+                      </div>
+                      <h4 style={{ color: "#144e01ff" }} className="mb-0 d-flex align-items-center">{feature.title}</h4>
                     </div>
+                    {/* Description below */}
                     <div className="feature-content">
-                      <h4>{feature.title}</h4>
                       <p>{feature.description}</p>
                     </div>
                   </div>
@@ -71,6 +76,8 @@ const FeatureSection: React.FC = () => {
               ))}
             </div>
           </div>
+
+
         </div>
       </div>
     </section>
