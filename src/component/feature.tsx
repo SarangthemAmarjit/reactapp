@@ -65,7 +65,12 @@ const FeatureSection: React.FC = () => {
                       <div className="feature-icon">
                         <i className={feature.icon}></i>
                       </div>
-                      <h4 style={{ color: "#144e01ff" }} className="mb-0 d-flex align-items-center">{feature.title}</h4>
+                      <h4
+                        style={{ color: "#144e01ff" }}
+                        className="mb-0 d-flex align-items-center"
+                      >
+                        {feature.title}
+                      </h4>
                     </div>
                     {/* Description below */}
                     <div className="feature-content">
@@ -76,8 +81,6 @@ const FeatureSection: React.FC = () => {
               ))}
             </div>
           </div>
-
-
         </div>
       </div>
     </section>

@@ -5,7 +5,6 @@ interface NavItem {
   id: number;
   label: string;
   href: string;
-
 }
 
 const Navbar: React.FC = () => {
@@ -14,25 +13,26 @@ const Navbar: React.FC = () => {
   const [selectedid, setselectedid] = useState(1);
 
   const navItems: NavItem[] = [
-    { id: 1, label: "Home", href: "#home", },
+    { id: 1, label: "Home", href: "#home" },
     { id: 2, label: "About", href: "#about" },
     { id: 3, label: "Features", href: "#features" },
     { id: 4, label: "CTA", href: "#cta" },
-
   ];
 
   function getselectednavid(id: number) {
-    setselectedid(id)
+    setselectedid(id);
   }
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-
   };
 
   return (
     <header className="header">
-      <div className="navbar-area" style={{ backgroundColor: "rgba(243, 250, 250, 0.8)", padding: "10px 0" }}>
+      <div
+        className="navbar-area"
+        style={{ backgroundColor: "rgba(243, 250, 250, 0.8)" }}
+      >
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-14">
@@ -52,8 +52,9 @@ const Navbar: React.FC = () => {
                 </button>
 
                 <div
-                  className={`collapse navbar-collapse sub-menu-bar ${isMenuOpen ? "show" : ""
-                    }`}
+                  className={`collapse navbar-collapse sub-menu-bar ${
+                    isMenuOpen ? "show" : ""
+                  }`}
                   id="navbarSupportedContent"
                 >
                   <div className="ms-auto">
@@ -61,21 +62,29 @@ const Navbar: React.FC = () => {
                       {navItems.map((item) => (
                         <li
                           key={item.id}
-                          className={`nav-item ${selectedid === item.id ? "active-nav" : ""}`}
+                          className={`nav-item ${
+                            selectedid === item.id ? "active-nav" : ""
+                          }`}
                         >
                           <a
-                            className={`page-scroll${selectedid === item.id ? " active" : ""}`}
+                            className={`page-scroll${
+                              selectedid === item.id ? " active" : ""
+                            }`}
                             href={item.href}
                             onClick={() => {
                               setIsMenuOpen(false);
                               getselectednavid(item.id);
                             }}
-                            style={selectedid === item.id ? {
-                              borderRadius: "5px",
-                              color: "#392303ff",
+                            style={
+                              selectedid === item.id
+                                ? {
+                                    borderRadius: "5px",
+                                    color: "#392303ff",
 
-                              backgroundColor: "#dceaa6ff"
-                            } : {}}
+                                    backgroundColor: "#dceaa6ff",
+                                  }
+                                : {}
+                            }
                           >
                             {item.label}
                           </a>

@@ -8,7 +8,9 @@ const HeroSection: React.FC = () => {
         <div className="row align-items-center">
           <div className="col-xl-6 col-lg-6 col-md-10">
             <div className="hero-content">
-              <h1>You are using free lite version of SaaSIntro</h1>
+              <h1 style={{ color: "#186411ff", fontFamily: "-moz-initial" }}>
+                You are using free lite version of SaaSIntro
+              </h1>
               <p>
                 Please, purchase full version of the template to get all
                 sections, elements and permission to remove footer credits.
