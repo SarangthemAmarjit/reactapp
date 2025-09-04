@@ -1,26 +1,32 @@
 // App.tsx
 import "./App.css";
-import AboutSection from "./component/aboutsection";
-import CtaSection from "./component/ctasection";
-import FeatureSection from "./component/feature";
-import Footer from "./component/footer";
-import HeroSection from "./component/hero";
-import Navbar from "./component/navbar";
-import Preloader from "./component/preloader";
-import ScrollTop from "./component/scrolltop";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Landing from "./pages/landingpage/landing";
+import Preloader from "./pages/landingpage/component/preloader";
+import Navbar from "./pages/landingpage/component/navbar";
+import Footer from "./pages/landingpage/component/footer";
+import ScrollTop from "./pages/landingpage/component/scrolltop";
+import TodoPage from "./pages/todo";
+
+// Common components
+
+
+
 
 function App() {
   return (
-    <div className="App">
+    <Router>
       <Preloader />
       <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <FeatureSection />
-      <CtaSection />
+
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/todo" element={<TodoPage />} />
+      </Routes>
+
       <Footer />
       <ScrollTop />
-    </div>
+    </Router>
   );
 }
 
